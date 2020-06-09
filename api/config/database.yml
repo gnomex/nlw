@@ -1,0 +1,15 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  username: postgres
+  password: 'p0Stgr3s'
+  pool: 5
+  host: 0.0.0.0
+
+development:
+  <<: *default
+  database: nlw_api_dev
+
+test:
+  <<: *default
+  database: nlw_api_test
