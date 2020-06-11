@@ -26,8 +26,12 @@ module Api
     config.encoding = "utf-8"
     config.api_only = true
 
-    # host = ENV['SYSTEM_DOMAIN'] || "#{ENV.fetch('HEROKU_APP_NAME')}.herokuapp.com"
-    host = "localhost:3000"
+    # allow svg to be served as Content-Disposition: inline 
+    # <https://github.com/rails/rails/issues/34665>
+    config.active_storage.content_types_allowed_inline << "image/svg+xml"
+    config.active_storage.content_types_to_serve_as_binary -= ["image/svg+xml"] 
+
+    host = ENV['SYSTEM_DOMAIN'] || "localhost:3000"
     protocol = Rails.application.config.force_ssl ? 'https' : 'http'
 
     Rails.application.routes.default_url_options.merge!(

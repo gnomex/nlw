@@ -3,5 +3,9 @@ Rails.application.routes.draw do
     resources :items do
       get :image, on: :member
     end
+
+    resources :points do
+      get :image, on: :member
+    end
   end
 end

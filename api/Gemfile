@@ -10,7 +10,8 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'rack-cors'
 gem 'kaminari'
 gem 'fast_jsonapi'
-gem 'clamby'
+# gem 'clamby'
+gem "figaro"
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
