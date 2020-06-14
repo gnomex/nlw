@@ -3,7 +3,6 @@ class CreateItems < ActiveRecord::Migration[6.0]
     create_table :items do |t|
       t.string :title
       t.string :description
-      t.references :point
 
       t.timestamps
     end

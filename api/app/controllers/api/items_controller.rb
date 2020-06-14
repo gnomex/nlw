@@ -33,16 +33,6 @@ class Api::ItemsController < ApplicationController
     end
   end
 
-  def image 
-    @item = Item.find_by(id: params[:id])
-
-    if @item&.image&.attached?
-      redirect_to rails_blob_url(@item.image)
-    else
-      head :not_found
-    end
-  end
-
   private
 
   def item_params

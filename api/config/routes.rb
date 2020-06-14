@@ -1,11 +1,6 @@
 Rails.application.routes.draw do
   namespace :api,  defaults: { format: :json } do
-    resources :items do
-      get :image, on: :member
-    end
-
-    resources :points do
-      get :image, on: :member
-    end
+    resources :items
+    resources :points
   end
 end

@@ -3,8 +3,6 @@ require 'fast_jsonapi'
 class ItemSerializer
   include FastJsonapi::ObjectSerializer
   
-  belongs_to :point
-
   attributes :title, :description
 
   attribute :image_url do |obj|
